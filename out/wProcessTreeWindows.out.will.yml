@@ -2,13 +2,10 @@ format: outwillfile-2.0
 root:
   - wProcessTreeWindows.out
 consistency:
-  wProcessTreeWindows.out.will.yml: &ref_0
-    hash: afe8440599b843da126ab256e2687d69
-    size: 32838
-  ../.ex.will.yml: &ref_1
-    hash: 69f625bd264c753ce207426c906807ce
-    size: 1795
-  ../.im.will.yml: &ref_2
+  ../.ex.will.yml: &ref_0
+    hash: 283421fd1cb118f629621a8fbebf365c
+    size: 1808
+  ../.im.will.yml: &ref_1
     hash: 1423ca8321bd839ae80a9fc67eadf558
     size: 5880
 module:
@@ -19,15 +16,16 @@ module:
       description: Fetch a Windows process tree fast
       enabled: 1
       version: 0.3.1
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
       license: MIT
       author: Microsoft Corporation
-      contributors:
+      contributors: &ref_3
         - Kostiantyn Wandalen <wanalen@01.school>
         - Volodymyr M. <volodymyr.migdal@gmail.com>
+      native: 1
       npm.name: w.process.tree.windows
-      npm.scripts:
+      npm.scripts: &ref_4
         install: node-pre-gyp install --update-binary --fallback-to-build
         test: wtest .run test.test/**
         clean: rm -rf build node_modules
@@ -598,24 +596,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -705,9 +685,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wProcessTreeWindows.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wProcessTreeWindows
@@ -715,18 +694,13 @@ module:
       description: Fetch a Windows process tree fast
       enabled: 1
       version: 0.3.1
-      interpreters:
-        - njs >= 10.0.0
+      interpreters: *ref_2
       license: MIT
       author: Microsoft Corporation
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
-        - Volodymyr M. <volodymyr.migdal@gmail.com>
+      contributors: *ref_3
+      native: 1
       npm.name: w.process.tree.windows
-      npm.scripts:
-        install: node-pre-gyp install --update-binary --fallback-to-build
-        test: wtest .run test.test/**
-        clean: rm -rf build node_modules
+      npm.scripts: *ref_4
     path:
       module.willfiles:
         criterion:
@@ -1298,9 +1272,8 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: 69f625bd264c753ce207426c906807ce
-        size: 1795
+        hash: 283421fd1cb118f629621a8fbebf365c
+        size: 1808
       ../.im.will.yml:
         hash: 1423ca8321bd839ae80a9fc67eadf558
         size: 5880
-      wProcessTreeWindows.out.will.yml: *ref_0
