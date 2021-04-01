@@ -1,6 +1,6 @@
 {
   "name": "w.process.tree.windows",
-  "version": "0.3.21",
+  "version": "0.3.22",
   "description": "Fetch a Windows process tree fast",
   "main": "lib/index.js",
   "types": "typings/windows-process-tree.d.ts",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "nan": "^2.13.2",
-    "node-pre-gyp": "0.14.0"
+    "@mapbox/node-pre-gyp": "1.0.2"
   },
   "gypfile": false,
   "devDependencies": {

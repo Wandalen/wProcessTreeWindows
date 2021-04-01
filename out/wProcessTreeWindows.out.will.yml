@@ -6,8 +6,8 @@ consistency:
     hash: 283421fd1cb118f629621a8fbebf365c
     size: 1808
   ../.im.will.yml: &ref_1
-    hash: 1423ca8321bd839ae80a9fc67eadf558
-    size: 5880
+    hash: 1ac784e6ef03bcc3a2b018a22fb899ea
+    size: 5895
 module:
   wProcessTreeWindows.out:
     about:
@@ -89,7 +89,7 @@ module:
       build:
         path: ../build
       node-pre-gyp:
-        path: ../node_modules/node-pre-gyp/bin/node-pre-gyp
+        path: ../node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp
       out.raw.debug:
         criterion:
           debug: debug
@@ -173,7 +173,7 @@ module:
         criterion:
           development: 0
       node-pre-gyp:
-        path: 'npm:///node-pre-gyp#0.14.0'
+        path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -761,7 +761,7 @@ module:
       build:
         path: build
       node-pre-gyp:
-        path: node_modules/node-pre-gyp/bin/node-pre-gyp
+        path: node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp
       out.raw.debug:
         criterion:
           debug: debug
@@ -826,7 +826,7 @@ module:
         criterion:
           development: 0
       node-pre-gyp:
-        path: 'npm:///node-pre-gyp#0.14.0'
+        path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1275,5 +1275,5 @@ module:
         hash: 283421fd1cb118f629621a8fbebf365c
         size: 1808
       ../.im.will.yml:
-        hash: 1423ca8321bd839ae80a9fc67eadf558
-        size: 5880
+        hash: 1ac784e6ef03bcc3a2b018a22fb899ea
+        size: 5895
