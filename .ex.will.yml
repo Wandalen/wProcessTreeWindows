@@ -12,6 +12,7 @@ about :
   contributors :
   - 'Kostiantyn Wandalen <wanalen@01.school>'
   - 'Volodymyr M. <volodymyr.migdal@gmail.com>'
+  native : 1
   npm.name : 'w.process.tree.windows'
   npm.scripts :
     install : 'node-pre-gyp install --update-binary --fallback-to-build'
