@@ -108,8 +108,8 @@ path:
       raw: compiled
       content: prime
   npm.proto.entry:
-    - /pro/module/wProcessTreeWindows/lib/index.js
-    - /pro/module/wProcessTreeWindows/proto/node_modules/w.process.tree.windows
+    - lib/index.js
+    - proto/node_modules/w.process.tree.windows
 reflector:
   reflect.proto:
     inherit: predefined.*
