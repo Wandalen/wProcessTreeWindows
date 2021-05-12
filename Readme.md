@@ -2,11 +2,11 @@
 
 A Node.js library that enables quickly fetching process tree information for a particular process ID on Windows.
 
-## About this fork
+### About this fork
 
 This fork is created to provide prebuild versions of the library. [Original repository](https://github.com/microsoft/vscode-windows-process-tree)
 
-## Usage
+### Usage
 
 ```ts
 import * as child_process from 'child_process';
@@ -31,7 +31,7 @@ if (process.platform === 'win32') {
 
 For the full API look at the [typings file](./typings/windows-process-tree.d.ts).
 
-## Why a native node module?
+### Why a native node module?
 
 The current convention is to run wmic.exe to query a particular process ID and then parse the output like so:
 
@@ -68,7 +68,7 @@ The native node module uses Windows APIs to get the process details and then the
 
 \* On my machine :slightly_smiling_face:
 
-## Contributing
+### Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
