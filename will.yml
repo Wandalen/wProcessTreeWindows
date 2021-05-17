@@ -1,50 +1,102 @@
-submodule:
-  nan:
-    path: 'npm:///node-gyp#2.13.2'
-    enabled: 0
+about:
+  name: wProcessTreeWindows
+  description: Fetch a Windows process tree fast
+  version: 0.3.1
+  enabled: 1
+  license: MIT
+  native: 1
+  npm.name: w.process.tree.windows
+  author: Microsoft Corporation
+  contributors:
+    - Kostiantyn Wandalen <wanalen@01.school>
+    - Volodymyr M. <volodymyr.migdal@gmail.com>
+  interpreters:
+    - njs >= 10.0.0
+  npm.scripts:
+    install: node-pre-gyp install --update-binary --fallback-to-build
+    test: wtest .run test.test/**
+    clean: rm -rf build node_modules
+build:
+  proto.export:
     criterion:
-      development: 0
-  node-pre-gyp:
-    path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
-    enabled: 0
+      content: proto
+      export: 1
+    steps:
+      - 'step::proto.export'
+  doc.export:
     criterion:
-      development: 0
-  mocha:
-    path: 'npm:///mocha#3.5.0'
-    enabled: 0
+      content: doc
+      export: 1
+    steps:
+      - 'step::doc.export'
+  npm.export:
     criterion:
-      development: 1
-  typescript:
-    path: 'npm:///typescript#2.7.2'
-    enabled: 0
+      content: npm
+      export: 1
+    steps:
+      - 'step::npm.publish'
+  export:
     criterion:
-      development: 1
-  tslint:
-    path: 'npm:///tslint#5.9.1'
-    enabled: 0
+      default: 1
+      export: 1
+    steps:
+      - 'build::proto.export'
+  debug:
     criterion:
-      development: 1
-  '@types/node':
-    path: 'npm:///@types/node#9.4.7'
-    enabled: 0
+      default: 1
+    steps:
+      - submodules.update
+      - node-gyp.build
+  install:
+    steps:
+      - submodules.update
+      - node-gyp.install
+  compiled.debug:
     criterion:
-      development: 1
-  '@types/mocha':
-    path: 'npm:///@types/mocha#2.2.48'
-    enabled: 0
+      debug: debug
+      raw: compiled
+      content: prime
+    steps:
+      - 'step::clean.out*=2'
+      - transpile.proto.no.tests*=1
+      - transpile.proto.only.tests*=1
+  raw.release:
     criterion:
-      development: 1
-  node-gyp:
-    path: 'npm:///node-gyp#5.1.1'
-    enabled: 0
+      debug: release
+      raw: raw
+      content: prime
+    steps:
+      - 'step::clean.out*=2'
+      - transpile.proto.raw
+  release:
     criterion:
-      development: 1
-  node-pre-gyp-github:
-    path: 'npm:///node-pre-gyp-github#1.4.3'
-    enabled: 0
+      debug: release
+      raw: compiled
+      content: prime
+    steps:
+      - 'step::clean.out*=2'
+      - transpile.proto.no.tests*=1
+      - transpile.proto.only.tests*=1
+  npm:
     criterion:
-      development: 1
+      debug: debug
+      raw: raw
+      content: npm
+    steps:
+      - npm.generate.*=1
+  all:
+    steps:
+      - 'build::debug'
+      - 'build::compiled.debug'
+      - 'build::raw.release'
+      - 'build::release'
+      - 'build::npm'
 path:
+  repository: 'git+https:///github.com/Wandalen/wProcessTreeWindows.git'
+  origins:
+    - 'git+https:///github.com/Wandalen/wProcessTreeWindows.git'
+    - 'npm:///w.process.tree.windows'
+  bugtracker: 'https:///github.com/Wandalen/wProcessTreeWindows/issues'
   in: .
   out: out
   temp:
@@ -172,6 +224,26 @@ reflector:
       '**.test*': 1
       'path::proto': '{path::out.*=1}/Tests.test.s'
 step:
+  proto.export:
+    inherit: module.export
+    export: 'path::export'
+    tar: 0
+    criterion:
+      content: proto
+  doc.export:
+    inherit: module.export
+    export: 'path::doc'
+    tar: 0
+    criterion:
+      content: doc
+  npm.export:
+    inherit: module.export
+    export: out.npm
+    tar: 0
+    criterion:
+      content: npm
+  npm.publish:
+    shell: npm publish
   npm.generate:
     inherit: npm.generate
     entryPath: 'path::entry.out.*=1'
@@ -215,54 +287,39 @@ step:
   node-gyp.install:
     currentPath: 'path::in'
     shell: npm run-script node-pre-gyp-install
-build:
-  debug:
+submodule:
+  node-gyp:
+    path: 'npm:///node-gyp#2.13.2'
+    enabled: 0
     criterion:
-      default: 1
-    steps:
-      - submodules.update
-      - node-gyp.build
-  install:
-    steps:
-      - submodules.update
-      - node-gyp.install
-  compiled.debug:
+      development: 0
+  '@mapbox':
+    path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
+    enabled: 0
     criterion:
-      debug: debug
-      raw: compiled
-      content: prime
-    steps:
-      - 'step::clean.out*=2'
-      - transpile.proto.no.tests*=1
-      - transpile.proto.only.tests*=1
-  raw.release:
+      development: 0
+  mocha:
+    path: 'npm:///mocha#3.5.0'
+    enabled: 0
     criterion:
-      debug: release
-      raw: raw
-      content: prime
-    steps:
-      - 'step::clean.out*=2'
-      - transpile.proto.raw
-  release:
+      development: 1
+  typescript:
+    path: 'npm:///typescript#2.7.2'
+    enabled: 0
     criterion:
-      debug: release
-      raw: compiled
-      content: prime
-    steps:
-      - 'step::clean.out*=2'
-      - transpile.proto.no.tests*=1
-      - transpile.proto.only.tests*=1
-  npm:
+      development: 1
+  tslint:
+    path: 'npm:///tslint#5.9.1'
+    enabled: 0
     criterion:
-      debug: debug
-      raw: raw
-      content: npm
-    steps:
-      - npm.generate.*=1
-  all:
-    steps:
-      - 'build::debug'
-      - 'build::compiled.debug'
-      - 'build::raw.release'
-      - 'build::release'
-      - 'build::npm'
+      development: 1
+  '@types':
+    path: 'npm:///@types/node#9.4.7'
+    enabled: 0
+    criterion:
+      development: 1
+  node-pre-gyp-github:
+    path: 'npm:///node-pre-gyp-github#1.4.3'
+    enabled: 0
+    criterion:
+      development: 1
