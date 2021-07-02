@@ -1,20 +1,18 @@
 {
-  "name" : "w.process.tree.windows",
-  "version" : "0.3.40",
-  "description" : "Fetch a Windows process tree fast",
-  "main" : "proto/node_modules/w.process.tree.windows",
-  "types" : "typings/windows-process-tree.d.ts",
-  "scripts" :
-  {
-    "test" : "mocha lib/test.js",
-    "install" : "node step/Install.ss",
-    "node-pre-gyp-install" : "node-pre-gyp install --update-binary --fallback-to-build",
-    "node-pre-gyp-build" : "node-pre-gyp configure && node-pre-gyp rebuild",
-    "node-pre-gyp-package" : "node-pre-gyp package",
-    "node-pre-gyp-github-release" : "node-pre-gyp-github publish --release"
+  "name": "w.process.tree.windows",
+  "version": "0.3.41",
+  "description": "Fetch a Windows process tree fast",
+  "main": "proto/node_modules/w.process.tree.windows",
+  "types": "typings/windows-process-tree.d.ts",
+  "scripts": {
+    "test": "mocha lib/test.js",
+    "install": "node step/Install.ss",
+    "node-pre-gyp-install": "node-pre-gyp install --update-binary --fallback-to-build",
+    "node-pre-gyp-build": "node-pre-gyp configure && node-pre-gyp rebuild",
+    "node-pre-gyp-package": "node-pre-gyp package",
+    "node-pre-gyp-github-release": "node-pre-gyp-github publish --release"
   },
-  "files" :
-  [
+  "files": [
     "binding.gyp",
     "typings",
     "src",
@@ -24,37 +22,38 @@
     "proto/node_modules",
     "proto/node_modules/w.process.tree.windows"
   ],
-  "binary" :
-  {
-    "module_name" : "windows_process_tree",
-    "module_path" : "./binding/",
-    "host" : "https://github.com/Wandalen/wProcessTreeWindows/releases/download/",
-    "remote_path" : "{version}"
+  "binary": {
+    "module_name": "windows_process_tree",
+    "module_path": "./binding/",
+    "host": "https://github.com/Wandalen/wProcessTreeWindows/releases/download/",
+    "remote_path": "{version}"
   },
-  "author" : "Microsoft Corporation",
-  "license" : "MIT",
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/Wandalen/wProcessTreeWindows.git"
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wandalen/wProcessTreeWindows.git"
   },
-  "homepage" : "https://github.com/Wandalen/wProcessTreeWindows",
-  "bugs" :
-  {
-    "url" : "https://github.com/Wandalen/wProcessTreeWindows/issues"
+  "homepage": "https://github.com/Wandalen/wProcessTreeWindows",
+  "bugs": {
+    "url": "https://github.com/Wandalen/wProcessTreeWindows/issues"
   },
-  "dependencies" : { "nan" : "^2.13.2", "@mapbox/node-pre-gyp" : "1.0.2" },
-  "gypfile" : false,
-  "devDependencies" :
-  {
-    "@types/mocha" : "2.2.48",
-    "@types/node" : "9.4.7",
-    "eslint" : "7.1.0",
-    "mocha" : "^3.5.0",
-    "node-gyp" : "5.1.1",
-    "node-pre-gyp-github" : "1.4.3",
-    "tslint" : "5.9.1",
-    "typescript" : "2.7.2"
+  "dependencies": {
+    "nan": "^2.13.2",
+    "@mapbox/node-pre-gyp": "1.0.2"
   },
-  "os" : [ "win32" ]
+  "gypfile": false,
+  "devDependencies": {
+    "typescript": "2.7.2",
+    "tslint": "5.9.1",
+    "node-pre-gyp-github": "1.4.3",
+    "node-gyp": "5.1.1",
+    "mocha": "^3.5.0",
+    "eslint": "7.1.0",
+    "@types/node": "9.4.7",
+    "@types/mocha": "2.2.48"
+  },
+  "os": [
+    "win32"
+  ]
 }
