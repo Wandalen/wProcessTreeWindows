@@ -294,7 +294,7 @@ submodule:
     criterion:
       development: 0
   '@mapbox':
-    path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
+    path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
     enabled: 0
     criterion:
       development: 0
