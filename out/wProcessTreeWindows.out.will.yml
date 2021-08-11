@@ -3,7 +3,7 @@ root:
   - wProcessTreeWindows.out
 consistency:
   ../will.yml: &ref_0
-    hash: 5e046ebe0a2155509d6125206211d592
+    hash: 1dfce8a1163a76f68efb9953dd402d2c
     size: 7083
 module:
   wProcessTreeWindows.out:
@@ -170,7 +170,7 @@ module:
         criterion:
           development: 0
       '@mapbox':
-        path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
+        path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -810,7 +810,7 @@ module:
         criterion:
           development: 0
       '@mapbox':
-        path: 'npm:///@mapbox/node-pre-gyp#1.0.2'
+        path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1244,5 +1244,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 5e046ebe0a2155509d6125206211d592
+        hash: 1dfce8a1163a76f68efb9953dd402d2c
         size: 7083

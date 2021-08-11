@@ -1,6 +1,6 @@
 {
   "name": "w.process.tree.windows",
-  "version": "0.3.49",
+  "version": "0.3.50",
   "description": "Fetch a Windows process tree fast",
   "main": "proto/node_modules/w.process.tree.windows",
   "types": "typings/windows-process-tree.d.ts",
@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "nan": "^2.13.2",
-    "@mapbox/node-pre-gyp": "1.0.2"
+    "@mapbox/node-pre-gyp": "1.0.5"
   },
   "gypfile": false,
   "devDependencies": {
