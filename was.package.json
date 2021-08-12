@@ -46,7 +46,7 @@
   "devDependencies": {
     "typescript": "2.7.2",
     "tslint": "5.9.1",
-    "node-pre-gyp-github": "1.4.3",
+    "@mathquis/node-pre-gyp-github": "1.0.1",
     "node-gyp": "5.1.1",
     "mocha": "^3.5.0",
     "eslint": "7.1.0",
