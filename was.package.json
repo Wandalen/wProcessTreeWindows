@@ -39,6 +39,7 @@
     "url": "https://github.com/Wandalen/wProcessTreeWindows/issues"
   },
   "dependencies": {
+    "node-gyp": "8.1.0",
     "nan": "^2.13.2",
     "@mapbox/node-pre-gyp": "1.0.5"
   },
