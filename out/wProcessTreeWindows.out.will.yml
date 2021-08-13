@@ -3,8 +3,8 @@ root:
   - wProcessTreeWindows.out
 consistency:
   ../will.yml: &ref_0
-    hash: 1dfce8a1163a76f68efb9953dd402d2c
-    size: 7083
+    hash: 73968e5532b36e4e7cb66ed69625fab3
+    size: 7093
 module:
   wProcessTreeWindows.out:
     about:
@@ -200,7 +200,7 @@ module:
         criterion:
           development: 1
       node-pre-gyp-github:
-        path: 'npm:///node-pre-gyp-github#1.4.3'
+        path: 'npm:///@mathquis/node-pre-gyp-github#1.0.1'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -840,7 +840,7 @@ module:
         criterion:
           development: 1
       node-pre-gyp-github:
-        path: 'npm:///node-pre-gyp-github#1.4.3'
+        path: 'npm:///@mathquis/node-pre-gyp-github#1.0.1'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1244,5 +1244,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 1dfce8a1163a76f68efb9953dd402d2c
-        size: 7083
+        hash: 73968e5532b36e4e7cb66ed69625fab3
+        size: 7093
