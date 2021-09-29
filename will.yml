@@ -3,8 +3,8 @@ about:
   description: Fetch a Windows process tree fast
   version: 0.3.1
   enabled: 1
-  license: MIT
   native: 1
+  license: MIT
   npm.name: w.process.tree.windows
   author: Microsoft Corporation
   contributors:
