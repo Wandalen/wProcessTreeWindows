@@ -3,7 +3,7 @@ root:
   - wProcessTreeWindows.out
 consistency:
   ../will.yml: &ref_0
-    hash: 73968e5532b36e4e7cb66ed69625fab3
+    hash: 0bfdc417c90a5a7a01b03ed07c637847
     size: 7093
 module:
   wProcessTreeWindows.out:
@@ -13,8 +13,8 @@ module:
       description: Fetch a Windows process tree fast
       enabled: 1
       version: 0.3.1
-      license: MIT
       native: 1
+      license: MIT
       npm.name: w.process.tree.windows
       author: Microsoft Corporation
       contributors: &ref_1
@@ -678,8 +678,8 @@ module:
       description: Fetch a Windows process tree fast
       enabled: 1
       version: 0.3.1
-      license: MIT
       native: 1
+      license: MIT
       npm.name: w.process.tree.windows
       author: Microsoft Corporation
       contributors: *ref_1
@@ -1244,5 +1244,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 73968e5532b36e4e7cb66ed69625fab3
+        hash: 0bfdc417c90a5a7a01b03ed07c637847
         size: 7093
