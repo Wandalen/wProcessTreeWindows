@@ -48,7 +48,7 @@
     "typescript": "2.7.2",
     "tslint": "5.9.1",
     "mocha": "^3.5.0",
-    "eslint": "7.1.0",
+    "eslint": "7.32.0",
     "@types/node": "9.4.7",
     "@types/mocha": "2.2.48",
     "@mathquis/node-pre-gyp-github": "1.0.1"
