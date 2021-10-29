@@ -3,8 +3,8 @@ root:
   - wProcessTreeWindows.out
 consistency:
   ../will.yml: &ref_0
-    hash: 0bfdc417c90a5a7a01b03ed07c637847
-    size: 7093
+    hash: d99c47505ccd593e29b162abf4915aa8
+    size: 6952
 module:
   wProcessTreeWindows.out:
     about:
@@ -395,9 +395,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -593,12 +590,6 @@ module:
           - 'step::doc.export'
         criterion:
           content: doc
-          export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
           export: 1
       export:
         steps:
@@ -981,9 +972,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -1180,12 +1168,6 @@ module:
         criterion:
           content: doc
           export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
-          export: 1
       export:
         steps:
           - 'build::proto.export'
@@ -1244,5 +1226,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 0bfdc417c90a5a7a01b03ed07c637847
-        size: 7093
+        hash: d99c47505ccd593e29b162abf4915aa8
+        size: 6952
