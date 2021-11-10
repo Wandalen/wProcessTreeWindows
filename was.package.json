@@ -1,6 +1,6 @@
 {
   "name": "w.process.tree.windows",
-  "version": "0.3.64",
+  "version": "0.3.65",
   "description": "Fetch a Windows process tree fast",
   "main": "proto/node_modules/w.process.tree.windows",
   "types": "typings/windows-process-tree.d.ts",
