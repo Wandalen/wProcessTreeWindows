@@ -18,7 +18,7 @@ module:
       npm.name: w.process.tree.windows
       author: Microsoft Corporation
       contributors: &ref_1
-        - Kostiantyn Wandalen <wanalen@01.school>
+        - Kostiantyn Wandalen <wandalen@obox.systems>
         - Volodymyr M. <volodymyr.migdal@gmail.com>
       interpreters: &ref_2
         - njs >= 10.0.0
