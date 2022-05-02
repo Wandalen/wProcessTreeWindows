@@ -281,37 +281,46 @@ step:
     shell: npm run-script node-pre-gyp-install
 submodule:
   node-gyp:
-    path: 'npm:///node-gyp#2.13.2'
+    path: 'npm:///node-gyp!9.0.0'
     enabled: 0
-    criterion:
-      development: 0
-  '@mapbox':
-    path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
+  nan:
+    path: 'npm:///nan!^2.13.2'
     enabled: 0
-    criterion:
-      development: 0
-  mocha:
-    path: 'npm:///mocha#3.5.0'
+  node-pre-gyp:
+    path: 'npm:///@mapbox/node-pre-gyp!1.0.9'
     enabled: 0
-    criterion:
-      development: 1
   typescript:
-    path: 'npm:///typescript#2.7.2'
+    path: 'npm:///typescript!2.7.2'
     enabled: 0
     criterion:
       development: 1
   tslint:
-    path: 'npm:///tslint#5.9.1'
+    path: 'npm:///tslint!5.9.1'
     enabled: 0
     criterion:
       development: 1
-  '@types':
-    path: 'npm:///@types/node#9.4.7'
+  mocha:
+    path: 'npm:///mocha!^3.5.0'
+    enabled: 0
+    criterion:
+      development: 1
+  eslint:
+    path: 'npm:///eslint!7.32.0'
+    enabled: 0
+    criterion:
+      development: 1
+  types.node:
+    path: 'npm:///@types/node!9.4.7'
+    enabled: 0
+    criterion:
+      development: 1
+  types.mocha:
+    path: 'npm:///@types/mocha!2.2.48'
     enabled: 0
     criterion:
       development: 1
   node-pre-gyp-github:
-    path: 'npm:///@mathquis/node-pre-gyp-github#1.0.1'
+    path: 'npm:///@mathquis/node-pre-gyp-github!1.0.1'
     enabled: 0
     criterion:
       development: 1
