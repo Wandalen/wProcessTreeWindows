@@ -3,8 +3,8 @@ root:
   - wProcessTreeWindows.out
 consistency:
   ../will.yml: &ref_0
-    hash: c09c699dfdb1d07adeeda18aad4af103
-    size: 6956
+    hash: f0345e66e7643838929ec7339a0efc7d
+    size: 7141
 module:
   wProcessTreeWindows.out:
     about:
@@ -164,43 +164,55 @@ module:
           - ../lib/test.ts
     submodule:
       node-gyp:
-        path: 'npm:///node-gyp#2.13.2'
+        path: 'npm:///node-gyp!9.0.0'
         autoExporting: 0
         enabled: 0
-        criterion:
-          development: 0
-      '@mapbox':
-        path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
+      nan:
+        path: 'npm:///nan!^2.13.2'
         autoExporting: 0
         enabled: 0
-        criterion:
-          development: 0
-      mocha:
-        path: 'npm:///mocha#3.5.0'
+      node-pre-gyp:
+        path: 'npm:///@mapbox/node-pre-gyp!1.0.9'
         autoExporting: 0
         enabled: 0
-        criterion:
-          development: 1
       typescript:
-        path: 'npm:///typescript#2.7.2'
+        path: 'npm:///typescript!2.7.2'
         autoExporting: 0
         enabled: 0
         criterion:
           development: 1
       tslint:
-        path: 'npm:///tslint#5.9.1'
+        path: 'npm:///tslint!5.9.1'
         autoExporting: 0
         enabled: 0
         criterion:
           development: 1
-      '@types':
-        path: 'npm:///@types/node#9.4.7'
+      mocha:
+        path: 'npm:///mocha!^3.5.0'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      eslint:
+        path: 'npm:///eslint!7.32.0'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      types.node:
+        path: 'npm:///@types/node!9.4.7'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      types.mocha:
+        path: 'npm:///@types/mocha!2.2.48'
         autoExporting: 0
         enabled: 0
         criterion:
           development: 1
       node-pre-gyp-github:
-        path: 'npm:///@mathquis/node-pre-gyp-github#1.0.1'
+        path: 'npm:///@mathquis/node-pre-gyp-github!1.0.1'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -795,43 +807,55 @@ module:
           - proto/node_modules/w.process.tree.windows
     submodule:
       node-gyp:
-        path: 'npm:///node-gyp#2.13.2'
+        path: 'npm:///node-gyp!9.0.0'
         autoExporting: 0
         enabled: 0
-        criterion:
-          development: 0
-      '@mapbox':
-        path: 'npm:///@mapbox/node-pre-gyp#1.0.5'
+      nan:
+        path: 'npm:///nan!^2.13.2'
         autoExporting: 0
         enabled: 0
-        criterion:
-          development: 0
-      mocha:
-        path: 'npm:///mocha#3.5.0'
+      node-pre-gyp:
+        path: 'npm:///@mapbox/node-pre-gyp!1.0.9'
         autoExporting: 0
         enabled: 0
-        criterion:
-          development: 1
       typescript:
-        path: 'npm:///typescript#2.7.2'
+        path: 'npm:///typescript!2.7.2'
         autoExporting: 0
         enabled: 0
         criterion:
           development: 1
       tslint:
-        path: 'npm:///tslint#5.9.1'
+        path: 'npm:///tslint!5.9.1'
         autoExporting: 0
         enabled: 0
         criterion:
           development: 1
-      '@types':
-        path: 'npm:///@types/node#9.4.7'
+      mocha:
+        path: 'npm:///mocha!^3.5.0'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      eslint:
+        path: 'npm:///eslint!7.32.0'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      types.node:
+        path: 'npm:///@types/node!9.4.7'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      types.mocha:
+        path: 'npm:///@types/mocha!2.2.48'
         autoExporting: 0
         enabled: 0
         criterion:
           development: 1
       node-pre-gyp-github:
-        path: 'npm:///@mathquis/node-pre-gyp-github#1.0.1'
+        path: 'npm:///@mathquis/node-pre-gyp-github!1.0.1'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1226,5 +1250,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: c09c699dfdb1d07adeeda18aad4af103
-        size: 6956
+        hash: f0345e66e7643838929ec7339a0efc7d
+        size: 7141
