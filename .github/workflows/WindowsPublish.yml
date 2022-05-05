@@ -26,9 +26,6 @@ jobs :
         git config --global user.name "Testing"
         git config --global pull.rebase false
         git config --global init.defaultBranch master
-    - run : git config --global core.autocrlf input
-    - run : git config --global user.email "testing@testing.com"
-    - run : git config --global user.name "Testing"
     - uses : actions/checkout@v2
     - name : ${{ matrix.node-version }}
       uses : actions/setup-node@v1
@@ -41,7 +38,10 @@ jobs :
     - name : Update npm if current version is 6
       if : "startsWith( steps.getnpmver.outputs.npmver, '6.' )"
       run : npm install -g npm@latest-6
-    # - run : npm -g i willbe@delta
+    - name : Update node-gyp
+      run : |
+        npm install --global node-gyp@9.0.0
+        npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
     - run : npm i
     - run : npm list
       continue-on-error : true
