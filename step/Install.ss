@@ -11,6 +11,7 @@
   {
     stdio: 'inherit',
     cwd : Path.join( __dirname, '..' ),
+    shell : true,
   }
   let npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 
